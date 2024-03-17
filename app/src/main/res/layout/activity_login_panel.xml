@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+<TextView
+    android:id="@+id/welcome"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hey there, "
+    android:textSize="18sp"
+    android:layout_centerHorizontal="true"
+    android:textColor="#696969"
+    android:gravity="center"
+    android:padding="16dp"
+    android:lineSpacingExtra="8dp"
+    />
+    <TextView
+        android:id="@+id/welcome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back "
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        android:padding="16dp"
+        android:lineSpacingExtra="8dp"
+        android:layout_below="@id/welcome"
+        android:layout_marginTop="-10dp"
+        />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome1"
+        android:orientation="vertical"
+        android:inputType="textEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorGrey"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_border"
+        android:layout_marginTop="16dp"
+
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Email"
+        android:orientation="vertical"
+        android:inputType="textPassword"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:hint="Password"
+        android:textColorHint="@color/colorGrey"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawableRight="@drawable/baseline_visibility_off_24"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_border"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="forgotPasswordClicked"
+        android:text="Forgot your password?"
+        android:textColor="@color/colorGrey"
+        android:textColorLink="@color/colorGreen"
+        android:textSize="18dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forgotPasswordTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Login"
+        android:background="@drawable/button_border"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account yet? Register"
+        android:textColor="@color/colorGrey"
+        android:clickable="true"
+        android:onClick="registerClicked"
+        android:layout_below="@+id/Login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+
+</RelativeLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LogowanieSQL</string>
+    <string name="register_text">Don\'t have an account yet? Register</string>
+
 </resources>

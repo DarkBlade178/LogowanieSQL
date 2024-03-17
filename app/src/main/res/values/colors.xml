@@ -2,12 +2,19 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPriamryDark">#00574b</color>
-    <color name="colorAccent">#d81b60</color>
+    <color name="colorAccent">#6666CC</color>
     
     <color name="colorTransparent">#00FFFFFF</color>
 
     <color name="colorGradientStart">#0d0a49</color>
     <color name="colorGradientCenter">#03e08a</color>
     <color name="colorGradientEnd">#ff7500</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffff</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorGreen">#009900</color>
+    <color name="colorBackgroundButton">#3399CC</color>
+    <color name="colorPurple">#6633CC</color>
 
 </resources>
