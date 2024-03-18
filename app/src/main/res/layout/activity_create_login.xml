@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateLoginActivity">
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hey there, "
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#696969"
+        android:gravity="center"
+        android:padding="16dp"
+        android:lineSpacingExtra="8dp"
+        />
+    <TextView
+        android:id="@+id/welcome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorBlack"
+        android:gravity="center"
+        android:padding="16dp"
+        android:lineSpacingExtra="8dp"
+        android:layout_below="@id/welcome"
+        android:layout_marginTop="-10dp"
+        />
+    <EditText
+        android:id="@+id/FirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_below="@+id/welcome1"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:hint="First Name"
+        android:textColorHint="#C8C8C8"
+        android:drawableLeft="@drawable/baseline_account_circle_24"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_border"
+        />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_below="@+id/FirstName"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Last Name"
+        android:textColorHint="#C8C8C8"
+        android:drawableLeft="@drawable/baseline_account_circle_24"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_border"
+        />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastName"
+        android:orientation="vertical"
+        android:inputType="textEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorGrey"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="8dp"
+        android:background="@drawable/edit_text_border"
+        android:layout_marginTop="16dp"
+        />
+
+</RelativeLayout>

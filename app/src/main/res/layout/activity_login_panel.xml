@@ -47,7 +47,6 @@
         android:drawablePadding="8dp"
         android:background="@drawable/edit_text_border"
         android:layout_marginTop="16dp"
-
         />
 
     <EditText
@@ -64,7 +63,7 @@
         android:textColorHint="@color/colorGrey"
         android:drawableLeft="@drawable/baseline_lock_24"
         android:drawableRight="@drawable/baseline_visibility_off_24"
-        android:drawablePadding="8dp"
+        android:drawablePadding="3dp"
         android:background="@drawable/edit_text_border"
         android:layout_marginTop="16dp"
         />
@@ -100,14 +99,14 @@
         android:id="@+id/registerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account yet? Register"
-        android:textColor="@color/colorGrey"
-        android:clickable="true"
-        android:onClick="registerClicked"
         android:layout_below="@+id/Login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        />
+        android:clickable="true"
+        android:onClick="registerClicked"
+        android:text="Don't have an account yet? Register"
+        android:textColor="@color/colorGrey"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 

@@ -1,8 +1,5 @@
-package com.example.logowaniesql
-
-import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -16,9 +13,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.example.logowaniesql.CreateLoginActivity
 
 class LoginActivity : AppCompatActivity() {
-    @SuppressLint("ClickableViewAccessibility")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_panel)
@@ -50,7 +48,10 @@ class LoginActivity : AppCompatActivity() {
         val spannableString = SpannableString(registerText)
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
-                // Obsługa kliknięcia, która przenosi użytkownika do ekranu rejestracji
+                // Przeniesienie użytkownika do CreateLoginActivity po kliknięciu
+                val intent = Intent(this@LoginActivity, CreateLoginActivity::class.java)
+                startActivity(intent)
+
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -62,7 +63,5 @@ class LoginActivity : AppCompatActivity() {
         spannableString.setSpan(clickableSpan, registerText.indexOf("Register"), registerText.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance() // Konieczne dla aktywacji klikalnego tekstu
-
-
     }
 }
