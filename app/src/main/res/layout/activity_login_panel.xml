@@ -75,13 +75,12 @@
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:onClick="forgotPasswordClicked"
+        android:contextClickable="true"
         android:text="Forgot your password?"
         android:textColor="@color/colorGrey"
         android:textColorLink="@color/colorGreen"
         android:textSize="18dp"
-        tools:ignore="TouchTargetSizeCheck" />
+        />
 
 
     <Button
@@ -103,10 +102,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        android:onClick="registerClicked"
+        android:contextClickable="true"
         android:text="Don't have an account yet? Register"
         android:textColor="@color/colorGrey"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:textSize="18sp"/>
 
 
 

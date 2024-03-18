@@ -11,7 +11,7 @@ android {
         applicationId = "com.example.logowaniesql"
         minSdk = 33
         //noinspection EditedTargetSdkVersion
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

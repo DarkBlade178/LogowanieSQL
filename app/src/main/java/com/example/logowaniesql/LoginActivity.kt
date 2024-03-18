@@ -1,3 +1,6 @@
+package com.example.logowaniesql
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +20,7 @@ import com.example.logowaniesql.CreateLoginActivity
 
 class LoginActivity : AppCompatActivity() {
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_panel)
@@ -56,12 +60,16 @@ class LoginActivity : AppCompatActivity() {
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
-                ds.color = ContextCompat.getColor(this@LoginActivity, R.color.colorPurple)
+                ds.color = ContextCompat.getColor(this@LoginActivity,R.color.colorPurple)
                 ds.isUnderlineText = true // Opcjonalnie, możesz usunąć podkreślenie
             }
         }
         spannableString.setSpan(clickableSpan, registerText.indexOf("Register"), registerText.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance() // Konieczne dla aktywacji klikalnego tekstu
+
+        spannableString.setSpan(clickableSpan, )
+
+
     }
 }
