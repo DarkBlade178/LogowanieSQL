@@ -47,19 +47,19 @@ class LoginActivity : AppCompatActivity() {
             }
             return@setOnTouchListener false
         }
-
-        val registerText = getString(R.string.register_text)
+        val forgotPassword = getString(R.string.forgotPasswordTextView)
+        val registerText = getString(R.string.register_textView)
         val spannableString = SpannableString(registerText)
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
                 // Przeniesienie użytkownika do CreateLoginActivity po kliknięciu
                 val intent = Intent(this@LoginActivity, CreateLoginActivity::class.java)
                 startActivity(intent)
-
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
+                ds.color = ContextCompat.getColor(this@LoginActivity, R.color.colorPurple)
                 ds.color = ContextCompat.getColor(this@LoginActivity,R.color.colorPurple)
                 ds.isUnderlineText = true // Opcjonalnie, możesz usunąć podkreślenie
             }
@@ -68,8 +68,10 @@ class LoginActivity : AppCompatActivity() {
         textView.text = spannableString
         textView.movementMethod = LinkMovementMethod.getInstance() // Konieczne dla aktywacji klikalnego tekstu
 
-        spannableString.setSpan(clickableSpan, )
 
+
+        spannableString.setSpan(clickableSpan,forgotPassword.indexOf("Forgot your password?"), forgotPassword.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE )
+        textView.movementMethod = LinkMovementMethod.getInstance()
 
     }
 }

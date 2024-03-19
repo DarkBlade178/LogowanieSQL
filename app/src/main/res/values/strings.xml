@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">LogowanieSQL</string>
-    <string name="register_text">Don\'t have an account yet? Register</string>
+    <string name="register_textView">Don\'t have an account yet? Register</string>
+    <string name="forgotPasswordTextView">Forgot your password?</string>
+    <string name="login_text">Already have an account? Login</string>
 
 </resources>
