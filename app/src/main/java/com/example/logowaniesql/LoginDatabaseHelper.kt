@@ -41,4 +41,18 @@ class LoginDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         db.insert(TABLE_NAME, null, values)
         db.close()
     }
+
+    fun updateNote(login: Login){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_FIRSTNAME, login.fistName)
+            put(COLUMN_LASTNAME, login.lastName)
+            put(COLUMN_EMAIL, login.email)
+            put(COLUMN_PASSWORD, login.password)
+        }
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(login.id.toString())
+        db.update(TABLE_NAME, values, whereClause, whereArgs)
+        db.close()
+    }
 }
