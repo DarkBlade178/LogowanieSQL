@@ -73,5 +73,9 @@ class LoginActivity : AppCompatActivity() {
         spannableString.setSpan(clickableSpan,forgotPassword.indexOf("Forgot your password?"), forgotPassword.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE )
         textView.movementMethod = LinkMovementMethod.getInstance()
 
+        findViewById<TextView>(R.id.forgotPasswordTextView).setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ResetPassword::class.java))
+        }
+
     }
 }
