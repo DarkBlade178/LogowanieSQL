@@ -23,7 +23,7 @@ class LoginAdapter(private  var logins: List<Login>, context: Context):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.note_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_main, parent, false)
         return NoteViewHolder(view)
     }
 
@@ -31,24 +31,26 @@ class LoginAdapter(private  var logins: List<Login>, context: Context):
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val login = logins[position]
-        holder.firstName.text = login.title
-        holder.lastName.text = login.content
+        holder.firstName.text
+        holder.lastName.text
+        holder.Email.text
+        holder.password.text
 
         holder.updateButton.setOnClickListener {
             val intent = Intent(holder.itemView.context, UpdateNoteActivity::class.java).apply {
-                putExtra("note_id", note.id)
+                putExtra("note_id", login.id)
             }
             holder.itemView.context.startActivity(intent)
         }
         holder.deleteButton.setOnClickListener {
-            db.deleteNote(note.id)
+            db.deleteNote(login.id)
             refreshData(db.getAllNotes())
             Toast.makeText(holder.itemView.context, "Note Delete", Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun refreshData(newNotes:List<Note>){
-        notes = newNotes
+    fun refreshData(newNotes:List<Login>){
+        logins = newNotes
         notifyDataSetChanged()
     }
 }
