@@ -55,4 +55,52 @@ class LoginDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         db.update(TABLE_NAME, values, whereClause, whereArgs)
         db.close()
     }
+
+    fun getAllNotes(): List<Login> {
+        val loginList = mutableListOf<Login>()
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+
+        while (cursor.moveToNext()){
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+            val firstName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRSTNAME))
+            val lastName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LASTNAME))
+            val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
+            val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+            val confirmPassword = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONFIRMPASSWORD))
+
+            val login = Login(id, firstName, lastName, email, password, confirmPassword)
+            loginList.add(login)
+        }
+        cursor.close()
+        db.close()
+        return loginList
+    }
+
+    fun getNoteByID(loginId: Int) : Login {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $loginId"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val firstName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRSTNAME))
+        val lastName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LASTNAME))
+        val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
+        val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+        val confirmPassword = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONFIRMPASSWORD))
+
+        cursor.close()
+        db.close()
+        return Login(id, firstName, lastName, email, password, confirmPassword)
+    }
+
+    fun deleteNote(loginId: Int){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(loginId.toString())
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+    }
 }
