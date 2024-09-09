@@ -13,8 +13,10 @@ import android.text.method.PasswordTransformationMethod
 import android.text.style.ClickableSpan
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.logowaniesql.CreateLoginActivity
 
@@ -26,6 +28,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login_panel)
 
         val textView = findViewById<TextView>(R.id.registerTextView)
+        val button = findViewById<Button>(R.id.Login)
+        val email = findViewById<EditText>(R.id.Email)
+        val password = findViewById<EditText>(R.id.password)
 
         val passwordEditText = findViewById<EditText>(R.id.password)
         passwordEditText.setOnTouchListener { _, event ->
@@ -76,6 +81,15 @@ class LoginActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.forgotPasswordTextView).setOnClickListener {
             startActivity(Intent(this@LoginActivity, ResetPassword::class.java))
         }
-
+        button.setOnClickListener {
+            val email = email.text.trim().toString()
+            val password = password.text.trim().toString()
+            val firstName = findViewById<EditText>(R.id.firstName)
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Fill in all fields!", Toast.LENGTH_SHORT).show()
+            }else if (password.isEmpty()){
+                    Toast.makeText(this, "Fill in all fields!", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

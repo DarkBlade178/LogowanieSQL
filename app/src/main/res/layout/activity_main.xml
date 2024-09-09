@@ -7,11 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
+    <TextView
+        android:text="Text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:drawable="@menu/bottom_navigation_menu" />
-
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

@@ -36,17 +36,7 @@ class LoginAdapter(private  var logins: List<Login>, context: Context):
         holder.Email.text
         holder.password.text
 
-        holder.updateButton.setOnClickListener {
-            val intent = Intent(holder.itemView.context, UpdateNoteActivity::class.java).apply {
-                putExtra("note_id", login.id)
-            }
-            holder.itemView.context.startActivity(intent)
-        }
-        holder.deleteButton.setOnClickListener {
-            db.deleteNote(login.id)
-            refreshData(db.getAllNotes())
-            Toast.makeText(holder.itemView.context, "Note Delete", Toast.LENGTH_SHORT).show()
-        }
+
     }
 
     fun refreshData(newNotes:List<Login>){
