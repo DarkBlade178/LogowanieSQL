@@ -12,7 +12,6 @@
     android:text="Hey there, "
     android:textSize="18sp"
     android:layout_centerHorizontal="true"
-    android:textColor="#696969"
     android:gravity="center"
     android:padding="16dp"
     android:lineSpacingExtra="8dp"
@@ -42,7 +41,6 @@
         android:layout_centerHorizontal="true"
         android:padding="16dp"
         android:hint="Email"
-        android:textColorHint="@color/colorGrey"
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="8dp"
         android:background="@drawable/edit_text_border"
@@ -60,7 +58,6 @@
         android:layout_centerHorizontal="true"
         android:padding="16dp"
         android:hint="Password"
-        android:textColorHint="@color/colorGrey"
         android:drawableLeft="@drawable/baseline_lock_24"
         android:drawableRight="@drawable/baseline_visibility_off_24"
         android:drawablePadding="3dp"
@@ -77,8 +74,6 @@
         android:layout_marginTop="10dp"
         android:contextClickable="true"
         android:text="Forgot your password?"
-        android:textColor="@color/colorGrey"
-        android:textColorLink="@color/colorGreen"
         android:textSize="18sp"
         />
 
@@ -104,9 +99,9 @@
         android:clickable="true"
         android:contextClickable="true"
         android:text="Don't have an account yet? Register"
-        android:textColor="@color/colorGrey"
         android:textSize="18sp"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        />
 
 
 
